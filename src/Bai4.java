@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,20 +19,27 @@ public class Bai4 {
         JButton rightButton = new JButton("Phải");
 
         ActionListener alignListener = new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 JButton button = (JButton) e.getSource();
-                if (button.getText().equals("Trái")) {
-                    setAlignment(leftButton, Component.LEFT_ALIGNMENT);
-                    setAlignment(centerButton, Component.LEFT_ALIGNMENT);
-                    setAlignment(rightButton, Component.LEFT_ALIGNMENT);
-                } else if (button.getText().equals("Giữa")) {
-                    setAlignment(leftButton, Component.CENTER_ALIGNMENT);
-                    setAlignment(centerButton, Component.CENTER_ALIGNMENT);
-                    setAlignment(rightButton, Component.CENTER_ALIGNMENT);
-                } else if (button.getText().equals("Phải")) {
-                    setAlignment(leftButton, Component.RIGHT_ALIGNMENT);
-                    setAlignment(centerButton, Component.RIGHT_ALIGNMENT);
-                    setAlignment(rightButton, Component.RIGHT_ALIGNMENT);
+                switch (button.getText()) {
+                    case "Trái" -> {
+                        setAlignment(leftButton, Component.LEFT_ALIGNMENT);
+                        setAlignment(centerButton, Component.LEFT_ALIGNMENT);
+                        setAlignment(rightButton, Component.LEFT_ALIGNMENT);
+                    }
+                    case "Giữa" -> {
+                        setAlignment(leftButton, Component.CENTER_ALIGNMENT);
+                        setAlignment(centerButton, Component.CENTER_ALIGNMENT);
+                        setAlignment(rightButton, Component.CENTER_ALIGNMENT);
+                    }
+                    case "Phải" -> {
+                        setAlignment(leftButton, Component.RIGHT_ALIGNMENT);
+                        setAlignment(centerButton, Component.RIGHT_ALIGNMENT);
+                        setAlignment(rightButton, Component.RIGHT_ALIGNMENT);
+                    }
+                    default -> {
+                    }
                 }
             }
 
